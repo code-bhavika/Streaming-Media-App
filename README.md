@@ -1,63 +1,71 @@
 # 🚀 Media Application
 
-```{=html}
-<p align="center">
-```
-`<b>`{=html}Secure • Scalable • High-Performance Media Management
-System`</b>`{=html}
-```{=html}
-</p>
-```
-```{=html}
-<p align="center">
-```
-`<img src="https://img.shields.io/badge/Backend-Spring%20Boot-green?style=for-the-badge">`{=html}
-`<img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge">`{=html}
-`<img src="https://img.shields.io/badge/Storage-MinIO-orange?style=for-the-badge">`{=html}
-`<img src="https://img.shields.io/badge/Database-MongoDB-brightgreen?style=for-the-badge">`{=html}
-`<img src="https://img.shields.io/badge/Security-Keycloak-red?style=for-the-badge">`{=html}
-```{=html}
-</p>
-```
+**Secure • Scalable • High-Performance Media Management System**
 
 ------------------------------------------------------------------------
 
 ## 📌 Overview
 
-A **full-stack media management application** built with modern
-technologies, designed to handle **large-scale file uploads, downloads,
-and streaming** with robust security and optimized performance.
+A full-stack media management application designed to handle large-scale
+file uploads, downloads, and streaming with strong security and
+performance optimization.
 
 ------------------------------------------------------------------------
 
 ## ✨ Features
 
 -   🔐 Authentication & Authorization (Keycloak + JWT)\
--   📤 Multipart File Upload\
+-   📤 Multipart File Upload (Large files supported)\
 -   📥 File Download\
--   🎥 Video Streaming (byte-range support)\
+-   🎥 Video Streaming (Byte-range support)\
 -   📂 Metadata Management (MongoDB)\
--   📃 Pagination Support\
--   ❌ File Deletion\
--   ⚡ High Performance
+-   📃 Paginated File Listing\
+-   ❌ File Deletion APIs\
+-   ⚡ Optimized Performance
 
 ------------------------------------------------------------------------
 
 ## 🏗️ Architecture
 
-    React → Spring Boot → (MinIO + MongoDB)
-                 ↓
-             Keycloak (JWT)
+    Frontend (React)
+            ↓
+    Backend (Spring Boot)
+            ↓
+     -------------------------
+     |                       |
+    MinIO (Storage)     MongoDB (Metadata)
+
+            ↓
+       Keycloak (JWT Security)
 
 ------------------------------------------------------------------------
 
 ## ⚙️ Tech Stack
 
--   React.js\
--   Spring Boot\
--   MinIO\
--   MongoDB\
--   Keycloak + Spring Security
+-   Frontend: React.js\
+-   Backend: Spring Boot\
+-   Storage: MinIO (S3-compatible)\
+-   Database: MongoDB\
+-   Security: Keycloak + Spring Security (JWT)
+
+------------------------------------------------------------------------
+
+## 🔒 Security Flow
+
+1.  User authenticates via Keycloak\
+2.  JWT token is issued\
+3.  Token is attached to API requests\
+4.  Spring Security validates token
+
+------------------------------------------------------------------------
+
+## 📸 API Endpoints
+
+-   `POST /upload` → Upload file\
+-   `GET /files` → List files\
+-   `GET /download/{id}` → Download file\
+-   `GET /stream/{id}` → Stream media\
+-   `DELETE /delete/{id}` → Delete file
 
 ------------------------------------------------------------------------
 
@@ -70,11 +78,29 @@ cd media-app
 
 ------------------------------------------------------------------------
 
-## 📬 Contact
+## 📊 Use Cases
 
-**Kunal**\
+-   Media Streaming Platforms\
+-   Cloud Storage Systems\
+-   Enterprise File Management\
+-   Document Management Systems
+
+------------------------------------------------------------------------
+
+## 🧠 Key Learnings
+
+-   Storage vs Metadata separation\
+-   S3-compatible storage integration\
+-   JWT-based authentication\
+-   Handling large file streaming
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+Kunal\
 Software Developer
 
 ------------------------------------------------------------------------
 
-⭐ Star this repo if you found it useful!
+⭐ Star this repository if you found it useful!
