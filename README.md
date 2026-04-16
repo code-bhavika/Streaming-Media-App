@@ -98,7 +98,7 @@ cd media-app
 
 ## 👨‍💻 Author
 
-Kunal\
+Bhavika Dhiman\
 Software Developer
 
 ------------------------------------------------------------------------
